@@ -53,7 +53,7 @@ extension Issue: Comparable {
         if left == right {
             return lhs.issueCreationDate < rhs.issueCreationDate
         } else {
-            return lhs < rhs
+            return left < right
         }
     }
 }
