@@ -23,8 +23,13 @@ class DataController: ObservableObject {
     @Published var selectedFilter: Filter? = Filter.all
     @Published var selectedIssue: Issue?
     
-    @Published var filterText = ""
+    @Published var filterText = "" {
+        didSet {
+            updateSuggestedFilterTokens()
+        }
+    }
     @Published var filterTokens = [Tag]()
+    @Published var suggestedFilterTokens = [Tag]()
     
     @Published var filterEnabled = false
     @Published var filterPriority = -1
@@ -40,9 +45,10 @@ class DataController: ObservableObject {
         return dataController
     }()
     
-    var suggestedFilterTokens: [Tag] {
+    private func updateSuggestedFilterTokens() {
         guard filterText.starts(with: "#") else {
-            return []
+            suggestedFilterTokens = []
+            return
         }
         
         let trimmedFilterText = String(filterText.dropFirst()).trimmingCharacters(in: .whitespaces)
@@ -52,7 +58,7 @@ class DataController: ObservableObject {
             request.predicate = NSPredicate(format: "name CONTAINS[c] %@", trimmedFilterText)
         }
         
-        return (try? container.viewContext.fetch(request).sorted()) ?? []
+        suggestedFilterTokens = (try? container.viewContext.fetch(request).sorted()) ?? []
     }
     
     init(inMemory: Bool = false) {
@@ -103,7 +109,9 @@ class DataController: ObservableObject {
         }
         
         try? viewContext.save()
+        updateSuggestedFilterTokens()
     }
+    
     func save() {
         if container.viewContext.hasChanges {
             try? container.viewContext.save()
@@ -126,6 +134,7 @@ class DataController: ObservableObject {
         objectWillChange.send()
         container.viewContext.delete(object)
         save()
+        updateSuggestedFilterTokens()
     }
     
     private func delete(_ fetchRequest: NSFetchRequest<NSFetchRequestResult>) {
@@ -205,4 +214,27 @@ class DataController: ObservableObject {
         let allIssues = (try? container.viewContext.fetch(request)) ?? []
         return allIssues.sorted()
     }
+    
+    func newTag() {
+        let tag = Tag(context: container.viewContext)
+        tag.id = UUID()
+        tag.name = "New tag"
+        save()
+    }
+    
+    func newIssue() {
+        let issue = Issue(context: container.viewContext)
+        issue.title = "New Issue"
+        issue.creationDate = .now
+        issue.priority = 1
+        
+        if let tag = selectedFilter?.tag {
+            issue.addToTags(tag)
+        }
+        
+        save()
+
+        selectedIssue = issue
+    }
+    
 }
