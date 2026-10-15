@@ -17,6 +17,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DD3A12E0306B9C4500F5CA79"
                BuildableName = "FeedBacker.app"
+               BlueprintName = "FeedBacker"
                ReferencedContainer = "container:FeedBacker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,6 +48,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DD3A12E0306B9C4500F5CA79"
             BuildableName = "FeedBacker.app"
+            BlueprintName = "FeedBacker"
             ReferencedContainer = "container:FeedBacker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -63,6 +65,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DD3A12E0306B9C4500F5CA79"
             BuildableName = "FeedBacker.app"
+            BlueprintName = "FeedBacker"
             ReferencedContainer = "container:FeedBacker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

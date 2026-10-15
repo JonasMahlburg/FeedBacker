@@ -12,10 +12,9 @@ import CoreData
 struct FeedBackerApp: App {
     @StateObject var dataController = DataController()
     @Environment(\.scenePhase) var scenePhase
-    
     var body: some Scene {
         WindowGroup {
-            NavigationSplitView{
+            NavigationSplitView {
                 SidebarView()
             } content: {
                 ContentView()
