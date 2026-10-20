@@ -35,9 +35,9 @@ final class ExtensionTest: BaseTestCase {
         let issue = Issue(context: managedObjectContext)
         let testDate = Date.now
 
-        //When
+        // When
         issue.creationDate = testDate
-        
+
         // Then
         XCTAssertEqual(issue.issueCreationDate, testDate, "Changing CreationDate should also change issueCreationDate.")
     }

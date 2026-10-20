@@ -1,0 +1,27 @@
+{
+  "configurations" : [
+    {
+      "id" : "5E36716B-B72B-46DD-84BA-D35B4770998F",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "language" : "en",
+    "performanceAntipatternCheckerEnabled" : true,
+    "testInteropMode" : "complete"
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:FeedBacker.xcodeproj",
+        "identifier" : "DDCDC3D5308748D4009CA38A",
+        "name" : "FeedBackerUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>FeedBackerUITests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>DD3A12E0306B9C4500F5CA79</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DDCDC3D5308748D4009CA38A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
