@@ -34,6 +34,32 @@
 			);
 			target = DD3A12E0306B9C4500F5CA79 /* FeedBacker */;
 		};
+		DDAA697D30824E9B00670F2E /* Exceptions for "FeedBackerTests" folder in "FeedBacker" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AssetTests.swift,
+				AwardsTest.swift,
+				DevelopmentTests.swift,
+				ExtensionTest.swift,
+				FeedBackerTests.swift,
+				TagTests.swift,
+			);
+			target = DD3A12E0306B9C4500F5CA79 /* FeedBacker */;
+		};
+		DDAA697E30824E9B00670F2E /* Exceptions for "FeedBackerTests" folder in "FeedBackerTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AssetTests.swift,
+				AwardsTest.swift,
+				DevelopmentTests.swift,
+				ExtensionTest.swift,
+				FeedBackerTests.swift,
+				Fixtures/DecodableDictionary.json,
+				Fixtures/DecodableString.json,
+				TagTests.swift,
+			);
+			target = DDCA11943081F3D500A6BC1B /* FeedBackerTests */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -45,8 +71,12 @@
 			path = FeedBacker;
 			sourceTree = "<group>";
 		};
-		DDCA11963081F3D500A6BC1B /* FeedBackerTests */ = {
+		DDAA697630824E9A00670F2E /* FeedBackerTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DDAA697D30824E9B00670F2E /* Exceptions for "FeedBackerTests" folder in "FeedBacker" target */,
+				DDAA697E30824E9B00670F2E /* Exceptions for "FeedBackerTests" folder in "FeedBackerTests" target */,
+			);
 			path = FeedBackerTests;
 			sourceTree = "<group>";
 		};
@@ -71,8 +101,8 @@
 			children = (
 				DD3A1339306E31A200F5CA79 /* README.md */,
 				DD3A12E3306B9C4500F5CA79 /* FeedBacker */,
-				DDCA11963081F3D500A6BC1B /* FeedBackerTests */,
 				DD3A12E2306B9C4500F5CA79 /* Products */,
+				DDAA697630824E9A00670F2E /* FeedBackerTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +131,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				DD3A12E3306B9C4500F5CA79 /* FeedBacker */,
+				DDAA697630824E9A00670F2E /* FeedBackerTests */,
 			);
 			name = FeedBacker;
 			productName = FeedBacker;
@@ -119,9 +150,6 @@
 			);
 			dependencies = (
 				DDCA119A3081F3D500A6BC1B /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				DDCA11963081F3D500A6BC1B /* FeedBackerTests */,
 			);
 			name = FeedBackerTests;
 			productName = FeedBackerTests;
