@@ -86,7 +86,7 @@ final class FeedBackerUITests: XCTestCase {
 
     func testAllAwardsShowLockedAlert() {
         app.buttons["Filters"].tap()
-        app.buttons["Show awards"].tap()
+                app.buttons["Show awards"].tap()
 
         for award in app.scrollViews.buttons.allElementsBoundByIndex {
             if app.windows.element.frame.contains(award.frame) == false {

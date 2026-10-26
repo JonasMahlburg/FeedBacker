@@ -10,6 +10,7 @@ import SwiftUI
 struct IssueViewToolbar: View {
     @EnvironmentObject var dataController: DataController
     @ObservedObject var issue: Issue
+
     var openCloseButtonText: LocalizedStringKey {
         issue.completed ? "Re-open Issue" : "Close Issue"
     }
