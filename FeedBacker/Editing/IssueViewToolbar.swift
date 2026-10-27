@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreHaptics
 
 struct IssueViewToolbar: View {
     @EnvironmentObject var dataController: DataController
@@ -24,10 +25,24 @@ struct IssueViewToolbar: View {
             Button {
                 issue.completed.toggle()
                 dataController.save()
+
+                if issue.completed {
+                    UINotificationFeedbackGenerator().notificationOccurred(.success)
+                }
+
             }label: {
                 Label(openCloseButtonText, systemImage: "bubble.left.and.exclamationmark.bubble.right")
             }
+//            .sensoryFeedback(trigger: issue.completed) { oldValue, newValue in
+//                if newValue {
+//                    .success
+//                } else {
+//                    nil
+//                }
+//            }
+
             Divider()
+
             Section("Tags") {
                 TagsMenuView(issue: issue)
             }

@@ -38,7 +38,7 @@ final class FeedBackerUITests: XCTestCase {
     func testAppHasBasicButtonsOnLaunch() throws {
         XCTAssertTrue(app.navigationBars.buttons["Filters"].exists, "There should be a 'Filters' button on launch.")
         XCTAssertTrue(app.navigationBars.buttons["Filter"].exists, "There should be a 'Filter' button on launch.")
-        XCTAssertTrue(app.navigationBars.buttons["New issue"].exists, "There should be a 'New Issue' button on launch.")
+        XCTAssertTrue(app.navigationBars.buttons["New Issue"].exists, "There should be a 'New Issue' button on launch.")
     }
 
     func testNoIssuesAtStart() {
@@ -47,7 +47,7 @@ final class FeedBackerUITests: XCTestCase {
 
     func testCreatingAndDeletingIssues() {
         for tapCount in 1...5 {
-            app.buttons["New issue"].tap()
+            app.buttons["New Issue"].tap()
             app.buttons["Issues"].tap()
 
             XCTAssertEqual(app.cells.count, tapCount, "There should be \(tapCount) rows in the list.")
@@ -64,7 +64,7 @@ final class FeedBackerUITests: XCTestCase {
     func testEditingIssueTitleUpdatesCorrectly() {
         XCTAssertEqual(app.cells.count, 0, "There should be no rows initially.")
 
-        app.buttons["New issue"].tap()
+        app.buttons["New Issue"].tap()
 
         app.textFields["Enter the issue title here"].tap()
         app.textFields["Enter the issue title here"].clear()
@@ -75,7 +75,7 @@ final class FeedBackerUITests: XCTestCase {
     }
 
     func testEditingIssuePriorityShowsIcon() {
-        app.buttons["New issue"].tap()
+        app.buttons["New Issue"].tap()
         app.buttons["Priority, Medium"].tap()
         app.buttons["High"].tap()
         app.buttons["Issues"].tap()
@@ -86,7 +86,7 @@ final class FeedBackerUITests: XCTestCase {
 
     func testAllAwardsShowLockedAlert() {
         app.buttons["Filters"].tap()
-                app.buttons["Show awards"].tap()
+        app.buttons["Show awards"].tap()
 
         for award in app.scrollViews.buttons.allElementsBoundByIndex {
             if app.windows.element.frame.contains(award.frame) == false {
